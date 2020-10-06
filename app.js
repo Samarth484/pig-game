@@ -27,6 +27,23 @@ document.querySelector(".btn-roll").addEventListener("click", function() {
     var diceDOM = document.querySelector('.dice');
     diceDOM.src = "dice-" + dice + ".png";
     diceDOM.style.display = "block";
+    // display the obtained number on the current score as well
     document.getElementById("current-" + activePlayer).textContent = dice;
+    if (dice !== 1) {
+        // Add score in the pocket of the currently active player
+        roundScore += dice;
+        document.getElementById("score-" + activePlayer).textContent = roundScore;
 
-})
+    } else {
+        // swap the palyer and reset the scores of the by far currrently active player as 0 again
+        roundScore = 0;
+        activePlayer === 1 ? activePlayer = 0 : activePlayer = 1;
+        document.getElementById("current-0").textContent = "0";
+        document.getElementById("current-1").textContent = "0";
+        document.querySelector(".player-0-panel").classList.toggle("active");
+        document.querySelector(".player-1-panel").classList.toggle("active");
+        document.querySelector(".dice").style.display = "none";
+
+    }
+
+});
