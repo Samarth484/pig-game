@@ -6,6 +6,23 @@
     padding: 0;
     box-sizing: border-box;
 }
+.animate{
+  background-image: linear-gradient(130deg, #9AECDB,#F8EFBA,#D6A2E8,#55E6C1,#d1d8e0,#fed330,#feac5e,#c779d0,#4bc0c8,#EAECC6,#bdc3c7,#00FF00);
+  background-size: 600%;
+  animation: bganimation 193s infinite;
+
+}
+@keyframes bganimation {
+  0%{
+    background-position: 0% 50%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0% 50%;
+  }
+}
 
 .clearfix::after {
     content: "";
@@ -14,7 +31,7 @@
 }
 
 body {
-    background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(back.jpg);
+    /* background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(back.jpg); */
     background-size: cover;
     background-position: center;
     font-family: Lato;
